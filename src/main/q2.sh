@@ -5,6 +5,25 @@ set -eu
 input=${1:?需要输入目录}
 output=${2:?需要输出目录}
 
-# TODO：删除下方提示和 exit 77，再填写你的命令。
-printf '%s\n' 'Q2 尚未实现' >&2
-exit 77
+# 建立四个子目录
+mkdir -p "$output/sentry_ws/scripts"
+mkdir -p "$output/sentry_ws/config"
+mkdir -p "$output/sentry_ws/logs"
+mkdir -p "$output/sentry_ws/tmp"
+
+# 创建两个空文件
+touch "$output/sentry_ws/logs/.keep"
+touch "$output/sentry_ws/scratch.txt"
+
+# 写入 hello.sh
+cat > "$output/sentry_ws/scripts/hello.sh" <<'EOF'
+#!/bin/bash
+echo "Hello, AIM Linux!"
+EOF
+
+# 写入 robot.conf
+cat > "$output/sentry_ws/config/robot.conf" <<'EOF'
+robot=sentry
+mode=training
+log_level=INF0
+EOF
