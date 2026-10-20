@@ -5,7 +5,10 @@ input=${1:?需要输入目录}
 output=${2:?需要输出目录}
 
 mkdir -p "$output"
+
 cd "$input/handover"
 pwd > "$output/location.txt"
+
 cat .robot-id > "$output/robot-id.txt"
+
 cat notes/welcome.txt > "$output/welcome.txt"
