@@ -13,7 +13,7 @@ mkdir -p "$output/sentry_ws/tmp"
 
 # 创建两个空文件
 touch "$output/sentry_ws/logs/.keep"
-touch "$output/sentry_ws/scratch.txt"
+touch "$output/sentry_ws/tmp/scratch.txt"
 
 # 写入 hello.sh
 cat > "$output/sentry_ws/scripts/hello.sh" <<'EOF'
@@ -25,5 +25,5 @@ EOF
 cat > "$output/sentry_ws/config/robot.conf" <<'EOF'
 robot=sentry
 mode=training
-log_level=INF0
+log_level=INFO
 EOF
