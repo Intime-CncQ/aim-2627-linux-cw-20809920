@@ -9,6 +9,6 @@ mkdir -p "$output"
 cd "$input/handover"
 pwd > "$output/location.txt"
 
-cat .robot-id > "$output/robot-id.txt"
+cat "$input/handover/.robot-id" > "$output/robot-id.txt"
 
-cat notes/welcome.txt > "$output/welcome.txt"
+cat "$input/notes/welcome.txt" > "$output/welcome.txt"
